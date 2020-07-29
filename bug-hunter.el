@@ -6,7 +6,7 @@
 ;; URL: https://github.com/Malabarba/elisp-bug-hunter
 ;; Version: 1.3.1
 ;; Keywords: lisp
-;; Package-Requires: ((seq "1.3") (cl-lib "0.5"))
+;; Package-Requires: ((emacs "24.3") (seq "1.3"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -185,7 +185,7 @@ R is passed to `bug-hunter--report-print'."
 (defvar compilation-error-regexp-alist)
 (defun bug-hunter--init-report-buffer (assertion steps)
   "Create and prepare the \"*Bug-Hunter Report*\" buffer.
-Also add some descriptions depending on ASSERTION."
+Add descriptions depending on ASSERTION, remaining STEPS."
   (with-current-buffer (get-buffer-create "*Bug-Hunter Report*")
     (let ((inhibit-read-only t))
       (erase-buffer)
